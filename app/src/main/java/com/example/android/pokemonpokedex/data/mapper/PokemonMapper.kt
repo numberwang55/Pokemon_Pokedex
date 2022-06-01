@@ -28,27 +28,9 @@ fun PokemonDto.toPokedexDetailEntry(): PokedexDetailEntry {
         pokemonName = name,
         imageUrl = url,
         id = number.toInt(),
-//        hp = stats.first().base_stat,
-//        attack = stats.first{
-//            it.stat.name == "attack"
-//        }.base_stat,
-//        defence = stats.first{
-//            it.stat.name == "defense"
-//        }.base_stat,
-//        specialAttack = stats.first {
-//            it.stat.name == "special-attack"
-//        }.base_stat,
-//        specialDefence = stats.first {
-//            it.stat.name == "special-defense"
-//        }.base_stat,
-//        speed = stats.first {
-//            it.stat.name == "speed"
-//        }.base_stat,
         stats = stats.map { it.toPokedexDetailStats() },
         height = height,
         weight = weight,
-//        elementType = types.first().type.name,
-//        fightType = types.last().type.name
         fightType = types.map { it.toPokedexDetailTypes() }
     )
 }
